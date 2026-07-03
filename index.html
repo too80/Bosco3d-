@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bosco3D</title>
+
+<link rel="manifest" href="manifest.json">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial;
+  background:#0f1a14;
+  color:white;
+}
+
+header{
+  text-align:center;
+  padding:18px;
+  font-size:26px;
+  font-weight:bold;
+}
+
+.screen{padding:15px;}
+
+button{
+  width:100%;
+  padding:14px;
+  margin:8px 0;
+  font-size:18px;
+  border:none;
+  border-radius:10px;
+  background:#1f3a2b;
+  color:white;
+}
+
+button:active{transform:scale(0.98);}
+
+.hidden{display:none;}
+
+.card{
+  background:#15261d;
+  padding:15px;
+  border-radius:12px;
+  margin-bottom:10px;
+}
+
+.score-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.score-grid button{
+  font-size:22px;
+  padding:22px;
+}
+
+.score-11{background:#d4af37;}
+.score-10{background:#c0392b;}
+.score-8{background:#2980b9;}
+.score-5{background:#7f8c8d;}
+.score-m{background:#2c3e50;}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+}
+</style>
+</head>
+
+<body>
+
+<header>🌲 Bosco3D</header>
+
+<div id="home" class="screen">
+  <button onclick="start()">▶ Nuovo allenamento</button>
+</div>
+
+<div id="training" class="screen hidden">
+
+  <div class="topbar">
+    <div id="target">Bersaglio 1</div>
+    <div id="total">Tot: 0</div>
+  </div>
+
+  <div class="card">
+
+    <div class="score-grid">
+      <button class="score-11" onclick="score(11)">11</button>
+      <button class="score-10" onclick="score(10)">10</button>
+      <button class="score-8" onclick="score(8)">8</button>
+      <button class="score-5" onclick="score(5)">5</button>
+      <button class="score-m" onclick="score(0)">M</button>
+    </div>
+
+    <button onclick="undo()">↩ Annulla</button>
+
+  </div>
+
+</div>
+
+<script>
+let targets=28;
+let current=1;
+let shot=1;
+
+let total=0;
+let scores=[];
+let history=[];
+
+function start(){
+  current=1;
+  shot=1;
+  total=0;
+  scores=[];
+  history=[];
+  show("training");
+  update();
+}
+
+function score(v){
+
+  history.push({current,shot,value:v});
+
+  scores.push(v);
+  total+=v;
+
+  if(shot===1){
+    shot=2;
+  }else{
+    shot=1;
+    current++;
+  }
+
+  if(current>targets){
+    alert("Allenamento finito! Totale: "+total);
+    location.reload();
+  }
+
+  update();
+}
+
+function undo(){
+  if(history.length===0)return;
+
+  let last=history.pop();
+
+  scores.pop();
+  total-=last.value;
+
+  current=last.current;
+  shot=last.shot;
+
+  update();
+}
+
+function update(){
+  document.getElementById("target").innerText=
+    "Bersaglio "+current+"/"+targets;
+
+  document.getElementById("total").innerText=
+    "Tot: "+total;
+}
+
+function show(id){
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("training").classList.add("hidden");
+  document.getElementById(id).classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
