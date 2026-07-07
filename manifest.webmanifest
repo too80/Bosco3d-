@@ -1,0 +1,17 @@
+{
+  "name": "Bosco3D Lite",
+  "short_name": "Bosco3D",
+  "description": "Segnapunti per percorsi 3D di tiro con l'arco",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f5ef",
+  "theme_color": "#07391f",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
