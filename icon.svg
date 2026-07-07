@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<rect width="512" height="512" rx="96" fill="#102416"/>
-<circle cx="256" cy="230" r="165" fill="#f2ead2" stroke="#5ca85c" stroke-width="20"/>
-<circle cx="256" cy="230" r="122" fill="#111"/>
-<circle cx="256" cy="230" r="92" fill="#f2ead2"/>
-<circle cx="256" cy="230" r="66" fill="#2878ad"/>
-<circle cx="256" cy="230" r="42" fill="#b9342b"/>
-<circle cx="256" cy="230" r="22" fill="#ffd166"/>
-<line x1="95" y1="310" x2="410" y2="155" stroke="#111" stroke-width="18" stroke-linecap="round"/>
-<polygon points="410,155 352,142 374,198" fill="#e9f5e9"/>
-<text x="256" y="430" text-anchor="middle" font-family="Arial,sans-serif" font-size="64" font-weight="900" fill="white">Bosco3D</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="96" fill="#f7f5ef"/><circle cx="256" cy="210" r="150" fill="#fff" stroke="#1f5b2d" stroke-width="22"/><circle cx="256" cy="210" r="105" fill="#1f5b2d"/><circle cx="256" cy="210" r="68" fill="#fff"/><circle cx="256" cy="210" r="38" fill="#b3372f"/><text x="256" y="430" text-anchor="middle" font-family="Arial" font-size="64" font-weight="900" fill="#14221a">Bosco3D</text></svg>
