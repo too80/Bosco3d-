@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bosco3D Lite</title>
+<meta name="theme-color" content="#17351f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+<section id="home" class="screen active">
+<img src="icon.svg" class="logo" alt="Bosco3D">
+<h1>Bosco3D Lite</h1>
+<p class="subtitle">Segnapunti per percorsi 3D</p>
+<button id="btnNew" class="primary">🏹 Nuovo allenamento</button>
+<button id="btnResume" class="secondary hidden">▶ Riprendi allenamento</button>
+</section>
+<section id="training" class="screen">
+<div class="top-card">
+<div id="targetNumber" class="target">Bersaglio 1 / 24</div>
+<div id="arrowNumber" class="arrow">Freccia 1 / 2</div>
+<div class="score-label">Totale</div>
+<div id="total" class="total">0</div>
+</div>
+<div class="score-buttons">
+<button class="score score-11" data-score="11">11</button>
+<button class="score score-10" data-score="10">10</button>
+<button class="score score-8" data-score="8">8</button>
+<button class="score score-5" data-score="5">5</button>
+<button class="score miss" data-score="0">M</button>
+</div>
+<button id="btnUndo" class="warning">↩️ Annulla ultimo colpo</button>
+<button id="btnCancel" class="danger">❌ Annulla allenamento</button>
+</section>
+<section id="summary" class="screen">
+<h2>🏁 Allenamento terminato</h2>
+<p class="subtitle">Punteggio totale</p>
+<div id="finalTotal" class="final-total">0</div>
+<div id="summaryStats" class="summary-stats"></div>
+<button id="btnAgain" class="primary">🏹 Nuovo allenamento</button>
+<button id="btnHome" class="secondary">🏠 Home</button>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
