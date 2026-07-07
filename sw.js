@@ -1,0 +1,1 @@
+const CACHE_NAME="bosco3d-lite-v1-1";const FILES=["./","./index.html","./style.css","./app.js","./manifest.webmanifest","./icon.svg","./logo-compagnia.jpg"];self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(FILES)));self.skipWaiting()});self.addEventListener("fetch",e=>{e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)))})
